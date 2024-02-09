@@ -27,6 +27,7 @@
     <script src="{{ asset('backend/app-assets/vendors/sweetalert/sweetalert.min.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/sweetalert/sweetalert.css') }}">
     <!-- END: Custom CSS-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     @yield('css')
 </head>
 <!-- END: Head-->
@@ -157,6 +158,34 @@
     <script src="{{ asset('backend/app-assets/js/scripts/dashboard-ecommerce.js') }}"></script>
     <script src="{{ asset('backend/app-assets/js/scripts/extra-components-sweetalert.js') }}"></script>
     <!-- END PAGE LEVEL JS-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        @if(Session::has('message'))
+        var type = "{{ Session::get('alert-type','info') }}"
+        switch(type){
+            case 'info':
+                toastr.info("{{ Session::get('message') }}");
+                break;
+
+            case 'success':
+                toastr.success("{{ Session::get('message') }}");
+                break;
+
+            case 'warning':
+                toastr.warning("{{ Session::get('message') }}");
+                break;
+
+            case 'error':
+                toastr.error("{{ Session::get('message') }}");
+                break;
+        }
+        @endif
+    </script>
+
     @yield('js')
+
+
 </body>
 </html>

@@ -25,4 +25,9 @@ Route::post('email-verification',[AdminController::class,'emailVerification']);
 
 Route::get('store-contact',[ProductController::class,'storeContact']);
 
+Route::prefix('students')->group(function (){
+    Route::get('view',[ProductController::class,'viewStudents'])->name('view.student');
+    Route::post('info/store',[ProductController::class,'storeStudentsInfo'])->name('store.student.info');
+});
+
 

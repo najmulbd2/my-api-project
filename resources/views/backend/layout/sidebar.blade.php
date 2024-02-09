@@ -25,7 +25,7 @@
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
                     <li><a href="{{ route('add.product') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Second level">Add Product</span></a></li>
-                    <li><a href="#"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Second level">Manage Circle</span></a></li>
+                    <li><a href="{{ route('view.student') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Second level">Manage Circle</span></a></li>
                 </ul>
             </div>
         </li>
